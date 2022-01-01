@@ -1,3 +1,4 @@
+print("Loading Version 2.2")
 local ApexUITable = {GameName = "NameHere",flags={},hidded=false,hidekey=Enum.KeyCode.Semicolon}
 local selectdcategory = ""
 local ts = game:GetService("TweenService")
@@ -30,7 +31,7 @@ Title.Size = UDim2.new(0, 376, 0, 18)
 Title.ZIndex = 2
 Title.Font = Enum.Font.SourceSansSemibold
 spawn(function() while wait() do
-		Title.Text = "Pure Hub | "..ApexUITable.GameName
+		Title.Text = "Apex Hub | "..ApexUITable.GameName
 end end)
 Title.TextColor3 = Color3.fromRGB(235, 235, 235)
 Title.TextSize = 20.000
@@ -1117,5 +1118,3 @@ local function NOTSBZM_fake_script() -- Close.LocalScript
 end
 coroutine.wrap(NOTSBZM_fake_script)()
 return ApexUITable;
-
-print("Loading Version 2.2")
