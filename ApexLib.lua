@@ -30,7 +30,7 @@ Title.Size = UDim2.new(0, 376, 0, 18)
 Title.ZIndex = 2
 Title.Font = Enum.Font.SourceSansSemibold
 spawn(function() while wait() do
-		Title.Text = "Apex Hub | "..ApexUITable.GameName
+		Title.Text = "Pure Hub | "..ApexUITable.GameName
 end end)
 Title.TextColor3 = Color3.fromRGB(235, 235, 235)
 Title.TextSize = 20.000
@@ -248,10 +248,10 @@ function ApexUITable:Category(name)
 		ImageLabel.BorderSizePixel = 0
 		ImageLabel.Position = UDim2.new(0.5, 0, 0.5, 0)
 		ImageLabel.Rotation = 45.000
-		ImageLabel.Size = UDim2.new(1, 4, 1, 4)
+		ImageLabel.Size = UDim2.new(0.9, 0, 0.9, 0)
 		ImageLabel.ZIndex = 6
 		ImageLabel.ScaleType= Enum.ScaleType.Fit
-		ImageLabel.Image = "rbxassetid://5209162390"
+		ImageLabel.Image = "rbxassetid://8421839073"
 		ImageLabel.ImageColor3 = Color3.fromRGB(25, 25, 25)
 		local toggled = false
 		local ts = game:GetService("TweenService")
@@ -261,7 +261,7 @@ function ApexUITable:Category(name)
 			ts:Create(ToggleBorder,TweenInfo.new(0.3),{BackgroundColor3=Color3.fromRGB(30,30,30)}):Play()
 			ts:Create(ToggleBtn,TweenInfo.new(0.3),{BackgroundColor3=Color3.fromRGB(45,45,45)}):Play()
 			ts:Create(ImageLabel,TweenInfo.new(0.15),{ImageColor3=Color3.fromRGB(45,45,45)}):Play()
-			ImageLabel.Image = "rbxassetid://5209162390"
+			ImageLabel.Image = "rbxassetid://8421839073"
 			ImageLabel.Rotation = 45
 			wait(0.15)
 			ts:Create(ImageLabel,TweenInfo.new(0.15),{ImageColor3=Color3.fromRGB(25,25,25)}):Play()
@@ -285,7 +285,7 @@ function ApexUITable:Category(name)
 				ts:Create(ToggleBorder,TweenInfo.new(0.3),{BackgroundColor3=Color3.fromRGB(30,30,30)}):Play()
 				ts:Create(ToggleBtn,TweenInfo.new(0.3),{BackgroundColor3=Color3.fromRGB(45,45,45)}):Play()
 				ts:Create(ImageLabel,TweenInfo.new(0.15),{ImageColor3=Color3.fromRGB(45,45,45)}):Play()
-				ImageLabel.Image = "rbxassetid://5209162390"
+				ImageLabel.Image = "rbxassetid://8421839073"
 				ImageLabel.Rotation = 45
 				wait(0.15)
 				ts:Create(ImageLabel,TweenInfo.new(0.15),{ImageColor3=Color3.fromRGB(25,25,25)}):Play()
@@ -317,7 +317,7 @@ function ApexUITable:Category(name)
 				ts:Create(ToggleBorder,TweenInfo.new(0.3),{BackgroundColor3=Color3.fromRGB(30,30,30)}):Play()
 				ts:Create(ToggleBtn,TweenInfo.new(0.3),{BackgroundColor3=Color3.fromRGB(45,45,45)}):Play()
 				ts:Create(ImageLabel,TweenInfo.new(0.15),{ImageColor3=Color3.fromRGB(45,45,45)}):Play()
-				ImageLabel.Image = "rbxassetid://5209162390"
+				ImageLabel.Image = "rbxassetid://8421839073"
 				ImageLabel.Rotation = 45
 				wait(0.15)
 				ts:Create(ImageLabel,TweenInfo.new(0.15),{ImageColor3=Color3.fromRGB(25,25,25)}):Play()
