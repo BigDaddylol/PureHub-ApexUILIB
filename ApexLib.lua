@@ -1117,3 +1117,5 @@ local function NOTSBZM_fake_script() -- Close.LocalScript
 end
 coroutine.wrap(NOTSBZM_fake_script)()
 return ApexUITable;
+
+print("Loading Version 2.2")
