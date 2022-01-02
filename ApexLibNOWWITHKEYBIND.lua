@@ -1,4 +1,4 @@
-print("Loading Version 2.6")
+print("Loading Version 2.7")
 local ApexUITable = {GameName = "NameHere",flags={},hidded=false,hidekey=Enum.KeyCode.RightControl}
 local selectdcategory = ""
 local ts = game:GetService("TweenService")
@@ -1248,8 +1248,9 @@ local function NOTSBZM_fake_script() -- Close.LocalScript
     button2.MouseButton1Down:connect(function()
         if b2db == false then
             minimizeGui()
-            wait(1)
             b2db = true
+            wait(1)
+            b2db = false
         end
     end)
 
@@ -1260,8 +1261,9 @@ local function NOTSBZM_fake_script() -- Close.LocalScript
 			if e.KeyCode == ApexUITable.hidekey then
                 if ktdb == false then
                     minimizeGui()
-                    wait(1)
                     ktdb = true
+                    wait(1)
+                    ktdb = false
                 end
 			end
 		end
