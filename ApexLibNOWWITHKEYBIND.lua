@@ -1,4 +1,4 @@
-print("Loading Version 2.5")
+print("Loading Version 2.5.5")
 local ApexUITable = {GameName = "NameHere",flags={},hidded=false,hidekey=Enum.KeyCode.RightControl}
 local selectdcategory = ""
 local ts = game:GetService("TweenService")
@@ -1248,7 +1248,7 @@ local function NOTSBZM_fake_script() -- Close.LocalScript
         local db = false
         if db == false then
             minimizeGui()
-            wait(0.2)
+            wait(1)
             db = true
         end
     end)
@@ -1260,7 +1260,7 @@ local function NOTSBZM_fake_script() -- Close.LocalScript
 				local db = false
                 if db == false then
                     minimizeGui()
-                    wait(0.2)
+                    wait(1)
                     db = true
                 end
 			end
