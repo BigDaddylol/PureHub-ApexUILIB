@@ -1,4 +1,4 @@
-print("Loading Version 1.2")
+print("Loading Version 1.3")
 local ApexUITable = {GameName = "NameHere",flags={},hidded=false,hidekey=Enum.KeyCode.RightControl}
 local selectdcategory = ""
 local ts = game:GetService("TweenService")
