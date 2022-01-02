@@ -1,4 +1,4 @@
-print("Loading Version 2.3")
+print("Loading Version 2.4")
 local ApexUITable = {GameName = "NameHere",flags={},hidded=false,hidekey=Enum.KeyCode.RightControl}
 local selectdcategory = ""
 local ts = game:GetService("TweenService")
@@ -1208,11 +1208,11 @@ local function NOTSBZM_fake_script() -- Close.LocalScript
 		game:GetService("TweenService"):Create(button, TweenInfo.new(0.3), {TextColor3 = Color3.fromRGB(255, 0, 4)}):Play()
 	end)
     button2.MouseEnter:connect(function()
-		game:GetService("TweenService"):Create(button, TweenInfo.new(0.3), {TextColor3 = Color3.fromRGB(0, 140, 190)}):Play()
+		game:GetService("TweenService"):Create(button2, TweenInfo.new(0.3), {TextColor3 = Color3.fromRGB(0, 140, 190)}):Play()
 	end)
 	
 	button.MouseLeave:connect(function()
-		game:GetService("TweenService"):Create(button2, TweenInfo.new(0.3), {TextColor3 = Color3.fromRGB(255, 255, 255)}):Play()
+		game:GetService("TweenService"):Create(button, TweenInfo.new(0.3), {TextColor3 = Color3.fromRGB(255, 255, 255)}):Play()
 	end)
     button2.MouseLeave:connect(function()
 		game:GetService("TweenService"):Create(button2, TweenInfo.new(0.3), {TextColor3 = Color3.fromRGB(255, 255, 255)}):Play()
