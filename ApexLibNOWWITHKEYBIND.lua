@@ -1,4 +1,4 @@
-print("Loading Version 2.2")
+print("Loading Version 2.3")
 local ApexUITable = {GameName = "NameHere",flags={},hidded=false,hidekey=Enum.KeyCode.RightControl}
 local selectdcategory = ""
 local ts = game:GetService("TweenService")
@@ -1161,13 +1161,7 @@ local scripts = Instance.new("Folder",ApexUI)
 			end
 		end
 	end
-	
-minimizeButton.MouseButton1Click:Connect(function()
-	bubblefx(minimizeGui); -- PO`P EFFECT
-	print('Minimizing')
-	-- Minimize
-	--hidemenus();
-end)
+
 Close.MouseButton1Click:Connect(function()
 	bubblefx(Close); -- PO`P EFFECT
 	print('closing')
@@ -1218,10 +1212,10 @@ local function NOTSBZM_fake_script() -- Close.LocalScript
 	end)
 	
 	button.MouseLeave:connect(function()
-		game:GetService("TweenService"):Create(button, TweenInfo.new(0.3), {TextColor3 = Color3.fromRGB(255, 255, 255)}):Play()
+		game:GetService("TweenService"):Create(button2, TweenInfo.new(0.3), {TextColor3 = Color3.fromRGB(255, 255, 255)}):Play()
 	end)
     button2.MouseLeave:connect(function()
-		game:GetService("TweenService"):Create(button, TweenInfo.new(0.3), {TextColor3 = Color3.fromRGB(255, 255, 255)}):Play()
+		game:GetService("TweenService"):Create(button2, TweenInfo.new(0.3), {TextColor3 = Color3.fromRGB(255, 255, 255)}):Play()
 	end)
 	local gui = script.Parent.Parent
 	local pos = gui.Position
