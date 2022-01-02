@@ -1,4 +1,4 @@
-print("Loading Version 1.9.9")
+print("Loading Version 2")
 local ApexUITable = {GameName = "NameHere",flags={},hidded=false,hidekey=Enum.KeyCode.RightControl}
 local selectdcategory = ""
 local ts = game:GetService("TweenService")
@@ -1024,15 +1024,9 @@ function ApexUITable:Category(name)
         end)
 
         inputconnection = game:GetService("UserInputService").InputBegan:Connect(function(i, GPE)
-            print("1")
             if bind and i.KeyCode == bind and not GPE and not connection then
-                print("2")
-                if callback then
-                    print("3")
-                    if not changing then
-                        print("4")
-                        callback(i.KeyCode)
-                    end
+                if callback and not changing then
+                    callback(i.KeyCode)
                 end
             end
         end)
