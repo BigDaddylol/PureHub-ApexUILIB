@@ -939,6 +939,7 @@ function ApexUITable:Category(name)
         local KeyBindButton = Instance.new("ImageButton")
         local KeyBindKey = Instance.new("TextLabel")
         KeyBindBox.Name = name.."KeyBind"
+        KeyBindBox.Parent = CategoryHolder
         KeyBindBox.Active = true
         KeyBindBox.BackgroundColor3 = Color3.fromRGB(248, 248, 248)
         KeyBindBox.BackgroundTransparency = 1.000
@@ -951,6 +952,7 @@ function ApexUITable:Category(name)
         KeyBindBox.ScaleType = Enum.ScaleType.Slice
         KeyBindBox.SliceCenter = Rect.new(100, 100, 100, 100)
         KeyBindBox.SliceScale = 0.040
+        KeyBindName.Parent = KeyBindBox
         KeyBindName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         KeyBindName.BackgroundTransparency = 1.000
         KeyBindName.BorderSizePixel = 0
@@ -961,6 +963,7 @@ function ApexUITable:Category(name)
         KeyBindName.TextColor3 = Color3.fromRGB(255, 255, 255)
         KeyBindName.TextSize = 18.000
         KeyBindName.TextXAlignment = Enum.TextXAlignment.Left
+        KeyBindButton.Parent = KeyBindBox
         KeyBindButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         KeyBindButton.BackgroundTransparency = 1.000
         KeyBindButton.BorderSizePixel = 0
@@ -972,6 +975,7 @@ function ApexUITable:Category(name)
         KeyBindButton.ScaleType = Enum.ScaleType.Slice
         KeyBindButton.SliceCenter = Rect.new(100, 100, 100, 100)
         KeyBindButton.SliceScale = 0.040
+        KeyBindKey.Parent = KeyBindBUttonm
         KeyBindKey.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         KeyBindKey.BackgroundTransparency = 1.000
         KeyBindKey.BorderSizePixel = 0
