@@ -1,4 +1,4 @@
-print("Loading Version 1.6")
+print("Loading Version 1.7")
 local ApexUITable = {GameName = "NameHere",flags={},hidded=false,hidekey=Enum.KeyCode.RightControl}
 local selectdcategory = ""
 local ts = game:GetService("TweenService")
@@ -929,10 +929,10 @@ function ApexUITable:Category(name)
 		end
 		return bx;
 	end
-    function cat:KeyBind(name,default,callback) -- KeyBind
+    function cat:KeyBind(name,default,Callback) -- KeyBind
         name = name or "KeyBind"
         default = default or nil
-        callback = callback or function() end
+        Callback = Callback or function() end
         ApexUITable.flags[name] = default
         local KeyBindBox = Instance.new("ImageLabel")
         local KeyBindName = Instance.new("TextLabel")
@@ -979,7 +979,7 @@ function ApexUITable:Category(name)
         KeyBindKey.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         KeyBindKey.BackgroundTransparency = 1.000
         KeyBindKey.BorderSizePixel = 0
-        KeyBindKey.Position = UDim2.new(0.64, -30, 0, 0)
+        KeyBindKey.Position = UDim2.new(0, 13, 0, 0)
         KeyBindKey.Size = UDim2.new(0, 30, 1, 0)
         KeyBindKey.Font = Enum.Font.SourceSansSemibold
         KeyBindKey.Text = "None"
@@ -1020,6 +1020,14 @@ function ApexUITable:Category(name)
                     end
                 end
             end)
+        end)
+
+        inputconnection = game:GetService("UserInputService").InputBegan:Connect(function(i, GPE)
+            if bind and i.KeyCode == bind and not GPE and not connection then
+                if CallBack and not changing then
+                    CallBack(i.KeyCode)
+                end
+            end
         end)
     end
 	local ts = game:GetService("TweenService")
