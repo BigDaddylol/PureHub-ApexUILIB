@@ -8,5 +8,6 @@ Some of the changes are as follows -
 * **Adding debounces to all of the interactable ui (planned)**
 * **Adding the keybind (planned)**
 * **Adding gradient for aesthetics (planned)**
+* **Adding minimize button on top bar (planned)**
 
 These are the only main changes made by Ham#1591. Some minor ones may not be listed.
