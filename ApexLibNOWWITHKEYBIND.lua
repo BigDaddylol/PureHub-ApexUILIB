@@ -1,4 +1,4 @@
-print("Loading Version 1.4")
+print("Loading Version 1.5")
 local ApexUITable = {GameName = "NameHere",flags={},hidded=false,hidekey=Enum.KeyCode.RightControl}
 local selectdcategory = ""
 local ts = game:GetService("TweenService")
@@ -224,7 +224,7 @@ function ApexUITable:Category(name)
 		ToggleBorder.Parent = Toggle
 		ToggleBorder.AnchorPoint = Vector2.new(0, 0.5)
 		ToggleBorder.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-		ToggleBorder.Position = UDim2.new(0, 286, 0, 3)
+		ToggleBorder.Position = UDim2.new(0, 286, 0, 12)
 		ToggleBorder.Size = UDim2.new(0, 55, 1, -5)
 		ToggleBorder.ZIndex = 4
 		local corner1 = Instance.new("UICorner")
@@ -948,7 +948,7 @@ function ApexUITable:Category(name)
         KeyBindBox.Selectable = true
         KeyBindBox.Size = UDim2.new(1, -4, 0, 24)
         KeyBindBox.Image = "rbxassetid://3570695787"
-        KeyBindBox.ImageColor3 = Color3.fromRGB(50, 50, 50)
+        KeyBindBox.ImageColor3 = Color3.fromRGB(40, 40, 40)
         KeyBindBox.ScaleType = Enum.ScaleType.Slice
         KeyBindBox.SliceCenter = Rect.new(100, 100, 100, 100)
         KeyBindBox.SliceScale = 0.040
@@ -967,7 +967,7 @@ function ApexUITable:Category(name)
         KeyBindButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         KeyBindButton.BackgroundTransparency = 1.000
         KeyBindButton.BorderSizePixel = 0
-        KeyBindButton.Position = UDim2.new(0, 286, 0, 12)
+        KeyBindButton.Position = UDim2.new(0, 286, 0, 3)
         KeyBindButton.Size = UDim2.new(0, 55, 1, -5)
         KeyBindButton.AutoButtonColor = false
         KeyBindButton.Image = "rbxassetid://3570695787"
