@@ -1,4 +1,4 @@
-print("Loading Version 2")
+print("Loading Version 2.1")
 local ApexUITable = {GameName = "NameHere",flags={},hidded=false,hidekey=Enum.KeyCode.RightControl}
 local selectdcategory = ""
 local ts = game:GetService("TweenService")
@@ -65,6 +65,18 @@ Close.Font = Enum.Font.SourceSansSemibold
 Close.Text = "X"
 Close.TextColor3 = Color3.fromRGB(235, 235, 235)
 Close.TextSize = 20.000
+local minimizeButton = Instance.new("TextButton")
+minimizeButton.Name = "Minimize"
+minimizeButton.Parent = Container
+minimizeButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+minimizeButton.BackgroundTransparency = 1.000
+minimizeButton.Position = UDim2.new(0.935500028, 0, 0, 0)
+minimizeButton.Size = UDim2.new(0, 20, 0, 18)
+minimizeButton.AutoButtonColor = false
+minimizeButton.Font = Enum.Font.SourceSansSemibold
+minimizeButton.Text = "–"
+minimizeButton.TextColor3 = Color3.fromRGB(235, 235, 235)
+minimizeButton.TextSize = 20.000
 local CategoryList = Instance.new("ImageLabel")
 local Categories = Instance.new("ScrollingFrame")
 local CategoriesList = Instance.new("UIListLayout")
@@ -1008,7 +1020,6 @@ function ApexUITable:Category(name)
                         connection = nil
                         wait(.1)
                         changing = false
-                        print("No longer changing.")
                     end
                 elseif i.KeyCode == Enum.KeyCode.Backspace then
                     KeyBindKey.Text = "None"
@@ -1151,6 +1162,12 @@ local scripts = Instance.new("Folder",ApexUI)
 		end
 	end
 	
+minimizeButton.MouseButton1Click:Connect(function()
+	minimizeGui()
+	print('closing')
+	-- Minimize
+	--hidemenus();
+end)
 Close.MouseButton1Click:Connect(function()
 	bubblefx(Close); -- PO`P EFFECT
 	print('closing')
@@ -1208,25 +1225,29 @@ local function NOTSBZM_fake_script() -- Close.LocalScript
 		ApexUI:Destroy()
 		script.Disabled=true
 	end)
+
+    local function minimizeGui()
+        ApexUITable.hidded = not ApexUITable.hidded
+        if ApexUITable.hidded then
+            size = gui.Size
+            pos = gui.Position
+            if gui.Size ~= UDim2.new(0, 0,0, 285) then
+                game:GetService("TweenService"):Create(gui, TweenInfo.new(0.5), {Position = UDim2.new(pos.X.Scale +0.25,pos.X.Offset,pos.Y.Scale,pos.Y.Offset),Size = UDim2.new(0, 0,0, 285)}):Play()
+                wait(0.6)
+            end
+        else
+            if gui.Size ~= UDim2.new(0, 500, 0, 285) then
+                game:GetService("TweenService"):Create(gui, TweenInfo.new(0.5), {Position = UDim2.new(pos.X.Scale,pos.X.Offset,pos.Y.Scale,pos.Y.Offset),Size = UDim2.new(0, 500, 0, 285)}):Play()
+                wait(0.6)
+            end
+        end
+    end
 	
 	local uis = game:GetService("UserInputService")
 	uis.InputBegan:Connect(function(e,_)
 		if e.UserInputType == Enum.UserInputType.Keyboard then
 			if e.KeyCode == ApexUITable.hidekey then
-				ApexUITable.hidded = not ApexUITable.hidded
-				if ApexUITable.hidded then
-					size = gui.Size
-					pos = gui.Position
-					if gui.Size ~= UDim2.new(0, 0,0, 285) then
-						game:GetService("TweenService"):Create(gui, TweenInfo.new(0.5), {Position = UDim2.new(pos.X.Scale +0.25,pos.X.Offset,pos.Y.Scale,pos.Y.Offset),Size = UDim2.new(0, 0,0, 285)}):Play()
-						wait(0.6)
-					end
-				else
-					if gui.Size ~= UDim2.new(0, 500, 0, 285) then
-						game:GetService("TweenService"):Create(gui, TweenInfo.new(0.5), {Position = UDim2.new(pos.X.Scale,pos.X.Offset,pos.Y.Scale,pos.Y.Offset),Size = UDim2.new(0, 500, 0, 285)}):Play()
-						wait(0.6)
-					end
-				end
+				minimizeGui()
 			end
 		end
 	end)
