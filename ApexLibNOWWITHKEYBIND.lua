@@ -1,4 +1,4 @@
-print("Loading Version 1.5")
+print("Loading Version 1.6")
 local ApexUITable = {GameName = "NameHere",flags={},hidded=false,hidekey=Enum.KeyCode.RightControl}
 local selectdcategory = ""
 local ts = game:GetService("TweenService")
@@ -249,10 +249,10 @@ function ApexUITable:Category(name)
 		ImageLabel.BorderSizePixel = 0
 		ImageLabel.Position = UDim2.new(0.5, 0, 0.5, 0)
 		ImageLabel.Rotation = 45.000
-		ImageLabel.Size = UDim2.new(0.9, 0, 0.9, 0)
+		ImageLabel.Size = UDim2.new(1, 4, 1, 4)
 		ImageLabel.ZIndex = 6
 		ImageLabel.ScaleType= Enum.ScaleType.Fit
-		ImageLabel.Image = "rbxassetid://8421839073"
+		ImageLabel.Image = "rbxassetid://5209162390"
 		ImageLabel.ImageColor3 = Color3.fromRGB(25, 25, 25)
 		local toggled = false
 		local ts = game:GetService("TweenService")
@@ -262,7 +262,7 @@ function ApexUITable:Category(name)
 			ts:Create(ToggleBorder,TweenInfo.new(0.3),{BackgroundColor3=Color3.fromRGB(30,30,30)}):Play()
 			ts:Create(ToggleBtn,TweenInfo.new(0.3),{BackgroundColor3=Color3.fromRGB(45,45,45)}):Play()
 			ts:Create(ImageLabel,TweenInfo.new(0.15),{ImageColor3=Color3.fromRGB(45,45,45)}):Play()
-			ImageLabel.Image = "rbxassetid://8421839073"
+			ImageLabel.Image = "rbxassetid://5209162390"
 			ImageLabel.Rotation = 45
 			wait(0.15)
 			ts:Create(ImageLabel,TweenInfo.new(0.15),{ImageColor3=Color3.fromRGB(25,25,25)}):Play()
@@ -286,7 +286,7 @@ function ApexUITable:Category(name)
 				ts:Create(ToggleBorder,TweenInfo.new(0.3),{BackgroundColor3=Color3.fromRGB(30,30,30)}):Play()
 				ts:Create(ToggleBtn,TweenInfo.new(0.3),{BackgroundColor3=Color3.fromRGB(45,45,45)}):Play()
 				ts:Create(ImageLabel,TweenInfo.new(0.15),{ImageColor3=Color3.fromRGB(45,45,45)}):Play()
-				ImageLabel.Image = "rbxassetid://8421839073"
+				ImageLabel.Image = "rbxassetid://5209162390"
 				ImageLabel.Rotation = 45
 				wait(0.15)
 				ts:Create(ImageLabel,TweenInfo.new(0.15),{ImageColor3=Color3.fromRGB(25,25,25)}):Play()
@@ -318,7 +318,7 @@ function ApexUITable:Category(name)
 				ts:Create(ToggleBorder,TweenInfo.new(0.3),{BackgroundColor3=Color3.fromRGB(30,30,30)}):Play()
 				ts:Create(ToggleBtn,TweenInfo.new(0.3),{BackgroundColor3=Color3.fromRGB(45,45,45)}):Play()
 				ts:Create(ImageLabel,TweenInfo.new(0.15),{ImageColor3=Color3.fromRGB(45,45,45)}):Play()
-				ImageLabel.Image = "rbxassetid://8421839073"
+				ImageLabel.Image = "rbxassetid://5209162390"
 				ImageLabel.Rotation = 45
 				wait(0.15)
 				ts:Create(ImageLabel,TweenInfo.new(0.15),{ImageColor3=Color3.fromRGB(25,25,25)}):Play()
@@ -985,6 +985,42 @@ function ApexUITable:Category(name)
         KeyBindKey.Text = "None"
         KeyBindKey.TextColor3 = Color3.fromRGB(255, 255, 255)
         KeyBindKey.TextSize = 18.000
+
+        local connection
+        local changing
+        local bind
+        local inputconnection
+        local checkconnection
+
+        if default then
+            KeyBindKey.Text = default.Name
+        end
+
+        KeyBindButton.MouseButton1Click:Connect(function()
+            changing = true
+            KeyBindKey.Text = "..."
+            connection = game:GetService("UserInputService").InputBegan:Connect(function(i)
+                if i.UserInputType.Name == "Keyboard" and i.KeyCode ~= Enum.KeyCode.Backspace then
+                    KeyBindKey.Text = i.KeyCode.Name
+                    bind = i.KeyCode
+                    if connection then
+                        connection:Disconnect()
+                        connection = nil
+                        wait(.1)
+                        changing = false
+                    end
+                elseif i.KeyCode == Enum.KeyCode.Backspace then
+                    KeyBindKey.Text = "None"
+                    bind = nil
+                    if connection then
+                        connection:Disconnect()
+                        connection = nil 
+                        wait(.1)
+                        changing = false
+                    end
+                end
+            end)
+        end)
     end
 	local ts = game:GetService("TweenService")
 	local function bubblefx(obj) spawn(function() pcall(function()
