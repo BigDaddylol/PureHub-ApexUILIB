@@ -1,4 +1,4 @@
-print("Loading Version 1.7")
+print("Loading Version 1.8")
 local ApexUITable = {GameName = "NameHere",flags={},hidded=false,hidekey=Enum.KeyCode.RightControl}
 local selectdcategory = ""
 local ts = game:GetService("TweenService")
@@ -929,10 +929,10 @@ function ApexUITable:Category(name)
 		end
 		return bx;
 	end
-    function cat:KeyBind(name,default,Callback) -- KeyBind
+    function cat:KeyBind(name,default,callback) -- KeyBind
         name = name or "KeyBind"
         default = default or nil
-        Callback = Callback or function() end
+        callback = callback or function() end
         ApexUITable.flags[name] = default
         local KeyBindBox = Instance.new("ImageLabel")
         local KeyBindName = Instance.new("TextLabel")
@@ -1023,11 +1023,27 @@ function ApexUITable:Category(name)
         end)
 
         inputconnection = game:GetService("UserInputService").InputBegan:Connect(function(i, GPE)
+            print("1")
             if bind and i.KeyCode == bind and not GPE and not connection then
+                print("2")
                 if CallBack and not changing then
-                    CallBack(i.KeyCode)
+                    print("3")
+                    callback(i.KeyCode)
                 end
             end
+        end)
+
+        checkconnection = game:GetService("CoreGui").ChildRemoved:Connect(function(child)
+            if child.Name == ApexUI.Name then 
+                if inputconnection then
+                    inputconnection:Disconnect()
+                    inputconnection = nil
+                end
+                if checkconnection then 
+                    checkconnection:Disconnect()
+                    checkconnection = nil
+                end 
+            end 
         end)
     end
 	local ts = game:GetService("TweenService")
