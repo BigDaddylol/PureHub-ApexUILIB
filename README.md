@@ -6,7 +6,7 @@ Some of the changes are as follows -
 * **Adding category icons (planned)**
 * **Fixing the dropdown (complete)**
 * **Adding debounces to all of the interactable ui (planned)**
-* **Adding the keybind (planned)**
+* **Adding the keybind (complete!)**
 * **Adding gradient for aesthetics (planned)**
 * **Adding minimize button on top bar (planned)**
 
