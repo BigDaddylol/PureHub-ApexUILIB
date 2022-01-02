@@ -1,4 +1,4 @@
-print("Loading Version 1.8")
+print("Loading Version 1.9")
 local ApexUITable = {GameName = "NameHere",flags={},hidded=false,hidekey=Enum.KeyCode.RightControl}
 local selectdcategory = ""
 local ts = game:GetService("TweenService")
@@ -1008,6 +1008,7 @@ function ApexUITable:Category(name)
                         connection = nil
                         wait(.1)
                         changing = false
+                        print("No longer changing.")
                     end
                 elseif i.KeyCode == Enum.KeyCode.Backspace then
                     KeyBindKey.Text = "None"
@@ -1026,9 +1027,12 @@ function ApexUITable:Category(name)
             print("1")
             if bind and i.KeyCode == bind and not GPE and not connection then
                 print("2")
-                if CallBack and not changing then
-                    print("3")
-                    callback(i.KeyCode)
+                if CallBack then
+                    print("4")
+                    if not changing then
+                        print("5")
+                        callback(i.KeyCode)
+                    end
                 end
             end
         end)
