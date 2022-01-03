@@ -3,10 +3,10 @@ This is the version of the Apex ui Library that Pure Hub uses. It has been edite
 
 # Main Changes
 Some of the changes are as follows -
-* **Adding category icons (planned)**
+* **Adding category icons (complete)**
 * **Fixing the dropdown (complete)**
 * **Adding the keybind (complete!)**
-* **Adding gradient for aesthetics (planned)**
+* **Adding gradient for aesthetics (complete)**
 * **Adding minimize button on top bar (complete)**
 
 These are the only main changes made by Ham#1591. Some minor ones may not be listed.
