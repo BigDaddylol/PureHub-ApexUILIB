@@ -1,4 +1,4 @@
-print("Loading Version 2.9")
+print("Loading Version 3.0")
 local ApexUITable = {GameName = "NameHere",flags={},hidded=false,hidekey=Enum.KeyCode.RightControl}
 local selectdcategory = ""
 local ts = game:GetService("TweenService")
@@ -197,16 +197,16 @@ function ApexUITable:Category(name, icon, iconcolor)
 	CatList.SortOrder = Enum.SortOrder.LayoutOrder
 	CatList.Padding = UDim.new(0, 2)
 	Category_icon.Name = name.." icon"
-	Category_2.Parent = Category
-	Category_2.BackgroundTransparency = 1
-	Category_2.BorderSizePixel = 0
-	Category_2.Position = UDim2.new(0, 2, 0, 4)
-	Category_2.Size = UDim2.new(0, 25, 0, 25)
-	Category_2.Image = icon
-	Category_2.ImageColor3 = iconcolor
-	Category_2.ScaleType = Enum.ScaleType.Slice
-	Category_2.SliceScale = 0.050
-	Category_2.ZIndex = 3
+	Category_icon.Parent = Category
+	Category_icon.BackgroundTransparency = 1
+	Category_icon.BorderSizePixel = 0
+	Category_icon.Position = UDim2.new(0, 2, 0, 4)
+	Category_icon.Size = UDim2.new(0, 25, 0, 25)
+	Category_icon.Image = icon
+	Category_icon.ImageColor3 = iconcolor
+	Category_icon.ScaleType = Enum.ScaleType.Slice
+	Category_icon.SliceScale = 0.050
+	Category_icon.ZIndex = 3
 	local cat = {}
 	function cat:Toggle(name,default,callback)
 		name = name or "Toggle"
