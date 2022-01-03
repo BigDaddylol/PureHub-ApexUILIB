@@ -1,4 +1,4 @@
-print("Loading Version 2.7")
+print("Loading Version 2.7.5")
 local ApexUITable = {GameName = "NameHere",flags={},hidded=false,hidekey=Enum.KeyCode.RightControl}
 local selectdcategory = ""
 local ts = game:GetService("TweenService")
@@ -1006,6 +1006,7 @@ function ApexUITable:Category(name)
 
         if default then
             KeyBindKey.Text = default.Name
+			bind = default.Name
         end
 
         KeyBindButton.MouseButton1Click:Connect(function()
