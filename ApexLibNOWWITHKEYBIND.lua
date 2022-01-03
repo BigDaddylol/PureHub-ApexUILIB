@@ -1,4 +1,4 @@
-print("Loading Version 2.8")
+print("Loading Version 2.9")
 local ApexUITable = {GameName = "NameHere",flags={},hidded=false,hidekey=Enum.KeyCode.RightControl}
 local selectdcategory = ""
 local ts = game:GetService("TweenService")
@@ -118,7 +118,7 @@ top.BorderSizePixel = 0
 top.Size = UDim2.new(0, 100, 0, 13)
 bottom.Name = "bottom"
 bottom.Parent = CategoryList
-function ApexUITable:Category(name)
+function ApexUITable:Category(name, icon, iconcolor)
 	local Category = Instance.new("TextButton")
 	for i,v in pairs(Container:GetChildren()) do
 		if v:IsA("ImageLabel") and v.Name ~= "CategoryList" then
@@ -129,6 +129,7 @@ function ApexUITable:Category(name)
 	selectdcategory = name
 	CategoriesPadding.PaddingTop = UDim.new(0, 2)
 	local Category_2 = Instance.new("ImageLabel")
+	local Category_icon = Instance.new("ImageLabel")
 	Category_2.Name = name
 	Category_2.Parent = Container
 	Category_2.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
@@ -195,6 +196,17 @@ function ApexUITable:Category(name)
 	CatList.HorizontalAlignment = Enum.HorizontalAlignment.Center
 	CatList.SortOrder = Enum.SortOrder.LayoutOrder
 	CatList.Padding = UDim.new(0, 2)
+	Category_icon.Name = name.." icon"
+	Category_2.Parent = Category
+	Category_2.BackgroundTransparency = 1
+	Category_2.BorderSizePixel = 0
+	Category_2.Position = UDim2.new(0, 2, 0, 4)
+	Category_2.Size = UDim2.new(0, 25, 0, 25)
+	Category_2.Image = icon
+	Category_2.ImageColor3 = iconcolor
+	Category_2.ScaleType = Enum.ScaleType.Slice
+	Category_2.SliceScale = 0.050
+	Category_2.ZIndex = 3
 	local cat = {}
 	function cat:Toggle(name,default,callback)
 		name = name or "Toggle"
@@ -1247,25 +1259,16 @@ local function NOTSBZM_fake_script() -- Close.LocalScript
 
     local b2db = false
     button2.MouseButton1Down:connect(function()
-        if b2db == false then
-            minimizeGui()
-            b2db = true
-            wait(1)
-            b2db = false
-        end
+		minimizeGui()
+		wait(1)
     end)
 
-	local ktdb = false
 	local uis = game:GetService("UserInputService")
 	uis.InputBegan:Connect(function(e,_)
 		if e.UserInputType == Enum.UserInputType.Keyboard then
 			if e.KeyCode == ApexUITable.hidekey then
-                if ktdb == false then
-                    minimizeGui()
-                    ktdb = true
-                    wait(1)
-                    ktdb = false
-                end
+				minimizeGui()
+				wait(1)
 			end
 		end
 	end)
