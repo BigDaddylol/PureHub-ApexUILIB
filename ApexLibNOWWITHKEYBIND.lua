@@ -1,4 +1,4 @@
-print("Loading Version 3.1")
+print("Loading Version 3.2")
 local ApexUITable = {GameName = "NameHere",flags={},hidded=false,hidekey=Enum.KeyCode.RightControl}
 local selectdcategory = ""
 local ts = game:GetService("TweenService")
@@ -21,7 +21,7 @@ Container.SliceCenter = Rect.new(100, 100, 100, 100)
 Container.SliceScale = 0.100
 local gradientHolder = Instance.new("Frame")
 gradientHolder.Parent = Container
-gradientHolder.Name "Gradient Holder"
+gradientHolder.Name = "Gradient Holder"
 gradientHolder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 gradientHolder.BackgroundTransparency = 0
 gradientHolder.Size = UDim2.new(1, 0, 0, 3)
