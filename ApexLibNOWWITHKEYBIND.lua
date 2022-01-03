@@ -1,4 +1,4 @@
-print("Loading Version 3.0")
+print("Loading Version 3.1")
 local ApexUITable = {GameName = "NameHere",flags={},hidded=false,hidekey=Enum.KeyCode.RightControl}
 local selectdcategory = ""
 local ts = game:GetService("TweenService")
@@ -19,6 +19,41 @@ Container.ImageColor3 = Color3.fromRGB(35, 35, 35)
 Container.ScaleType = Enum.ScaleType.Slice
 Container.SliceCenter = Rect.new(100, 100, 100, 100)
 Container.SliceScale = 0.100
+local gradientHolder = Instance.new("Frame")
+gradientHolder.Parent = Container
+gradientHolder.Name "Gradient Holder"
+gradientHolder.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+gradientHolder.BackgroundTransparency = 0
+gradientHolder.Size = UDim2.new(1, 0, 0, 3)
+gradientHolder.Position = UDim2.new(0, 0, 0, 19)
+local gradient = Instance.new("UIGradient")
+gradient.Name = "CoolGradient"
+gradient.Parent = gradientHolder
+gradient.Color = ColorSequence.new({
+    ColorSequenceKeypoint.new(0, Color3.fromRGB(171, 0, 0)),
+    ColorSequenceKeypoint.new(0.5, Color3.fromRGB(116, 0, 0)),
+    ColorSequenceKeypoint.new(1, Color3.fromRGB(72, 0, 0))
+})
+local create1 = game:GetService("TweenService"):Create(gradient, TweenInfo.new(2.5, Enum.EasingStyle.Linear, Enum.EasingDirection.Out), {Offset = Vector2.new(-1, 0)})
+local rot = 180
+gradient.Offset = Vector2.new(1, 0)
+gradient.Rotation = 0
+create1:Play()
+local function completed()
+	if rot == 0 then
+		gradient.Rotation = 180
+		gradient.Offset = Vector2.new(1, 0)
+		create1:Play()	
+	elseif rot == 180 then
+		gradient.Rotation = 0
+		gradient.Offset = Vector2.new(1, 0)
+		create1:Play()
+	end	
+end
+create1.Completed:Connect(function() 
+	if rot == 0 then rot = 180 elseif rot == 180 then rot = 0 end
+	completed()
+end)
 local Title = Instance.new("TextLabel")
 local Background = Instance.new("ImageLabel")
 local hider = Instance.new("Frame")
