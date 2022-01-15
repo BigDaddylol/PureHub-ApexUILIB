@@ -201,6 +201,7 @@ function ApexUITable:Category(name, icon, iconcolor)
 	Category.Text = name
 	Category.TextColor3 = Color3.fromRGB(235, 235, 235)
 	Category.TextSize = 18.000
+    Category.TextXAlignment = Enum.TextXAlignment.Right
 	local corner = Instance.new("UICorner")
 	corner.CornerRadius=UDim.new(0,5)
 	corner.Parent = Category
