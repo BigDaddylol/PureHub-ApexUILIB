@@ -1,4 +1,5 @@
-local ApexUITable = {GameName = "NameHere",flags={},hidded=false,hidekey=Enum.KeyCode.RightControl}
+print("e")
+local ApexUITable = {GameName = "NameHere",flags={},hidded=false,hidekey=toggleKey}
 local selectdcategory = ""
 local ts = game:GetService("TweenService")
 local ApexUI = Instance.new("ScreenGui")
