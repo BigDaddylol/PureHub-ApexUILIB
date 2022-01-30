@@ -1,5 +1,5 @@
-print("e")
-local ApexUITable = {GameName = "NameHere",flags={},hidded=false,hidekey=Enum.KeyCode.RightControl}
+print("Pure Hub Loaded!")
+local ApexUITable = {GameName = "NameHere",flags={},hidded=false,hidekey=toggleKey}
 local selectdcategory = ""
 local ts = game:GetService("TweenService")
 local ApexUI = Instance.new("ScreenGui")
@@ -66,7 +66,7 @@ Title.Size = UDim2.new(0, 376, 0, 18)
 Title.ZIndex = 2
 Title.Font = Enum.Font.SourceSansSemibold
 spawn(function() while wait() do
-		Title.Text = "Pure Hub | "..ApexUITable.GameName
+		Title.Text = "Pure Hub | "..ApexUITable.GameName.." | Right Control to toggle"
 end end)
 Title.TextColor3 = Color3.fromRGB(235, 235, 235)
 Title.TextSize = 20.000
