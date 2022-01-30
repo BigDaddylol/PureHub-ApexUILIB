@@ -1274,6 +1274,7 @@ local function NOTSBZM_fake_script() -- Close.LocalScript
 		wait(0.4)
 		ApexUI:Destroy()
 		script.Disabled=true
+		game.StarterGui:SetCore("SendNotification", {Title = "Pure Hub Closed", Text = "Thank you for choosing Pure Hub! (discord.gg/purehub)", Duration = "300", Button1 = "Dismiss", Icon = "rbxassetid://7714412132"})
 	end)
 
     local function minimizeGui()
