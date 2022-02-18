@@ -1,4 +1,4 @@
-print("Pure Hub Loaded! v.2.3")
+print("Pure Hub Loaded! v.b2.3")
 local ApexUITable = {GameName = "NameHere",flags={},hidded=false,hidekey=toggleKey}
 local selectdcategory = ""
 local ts = game:GetService("TweenService")
