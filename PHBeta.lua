@@ -416,7 +416,7 @@ function ApexUITable:Category(name, icon, iconcolor)
 		Slider.ZIndex = 2
 		Slider.AutoButtonColor = false
 		local corner = Instance.new("UICorner")
-		corner.CornerRadius=UDim.new(0,5)
+		corner.CornerRadius = UDim.new(0,5)
 		corner.Parent = Slider
 		corner.Name = "Corner"
 		Name_2.Name = "Name"
@@ -465,7 +465,7 @@ function ApexUITable:Category(name, icon, iconcolor)
 		Value.TextSize = 18.000
 		Value.TextXAlignment = Enum.TextXAlignment.Right
 		local corner2 = Instance.new("UICorner")
-		corner2.CornerRadius=UDim.new(0,5)
+		corner2.CornerRadius = UDim.new(0,5)
 		corner2.Parent = ImageButton
 		corner2.Name = "Corner"
 		ApexUITable.flags[name] = numtable[2]
@@ -550,9 +550,7 @@ function ApexUITable:Category(name, icon, iconcolor)
 			ApexUITable.flags[name] = val
 			callback(val)
 		end
-		if callback then
-			callback(Value.Text)
-		end
+		sld:Set(default)
 		return sld;
 	end
 	function cat:Label(name)
