@@ -1,4 +1,4 @@
-print("Pure Hub Loaded! v.2.3")
+print("Pure Hub Loaded! v2.4")
 local ApexUITable = {GameName = "NameHere",flags={},hidded=false,hidekey=toggleKey}
 local selectdcategory = ""
 local ts = game:GetService("TweenService")
@@ -323,6 +323,7 @@ function ApexUITable:Category(name, icon, iconcolor)
 			ts:Create(ToggleBtn,TweenInfo.new(0.3),{BackgroundColor3=Color3.fromRGB(45,45,45)}):Play()
 			ts:Create(ImageLabel,TweenInfo.new(0.15),{ImageColor3=Color3.fromRGB(45,45,45)}):Play()
 			ImageLabel.Image = "rbxassetid://5209162390"
+			ImageLabel.Size = UDim2.new(1, 4, 1, 4)
 			ImageLabel.Rotation = 45
 			wait(0.15)
 			ts:Create(ImageLabel,TweenInfo.new(0.15),{ImageColor3=Color3.fromRGB(25,25,25)}):Play()
@@ -333,6 +334,7 @@ function ApexUITable:Category(name, icon, iconcolor)
 			ts:Create(ToggleBtn,TweenInfo.new(0.3),{BackgroundColor3=Color3.fromRGB(50,50,50)}):Play()
 			ts:Create(ImageLabel,TweenInfo.new(0.15),{ImageColor3=Color3.fromRGB(45,45,45)}):Play()
 			ImageLabel.Image = "rbxassetid://6290039376"
+			ImageLabel.Size = UDim2.new(1, 0, 1, 0)
 			ImageLabel.Rotation = 0
 			wait(0.15)
 			ts:Create(ImageLabel,TweenInfo.new(0.15),{ImageColor3=Color3.fromRGB(25,25,25)}):Play()
@@ -347,6 +349,7 @@ function ApexUITable:Category(name, icon, iconcolor)
 				ts:Create(ToggleBtn,TweenInfo.new(0.3),{BackgroundColor3=Color3.fromRGB(45,45,45)}):Play()
 				ts:Create(ImageLabel,TweenInfo.new(0.15),{ImageColor3=Color3.fromRGB(45,45,45)}):Play()
 				ImageLabel.Image = "rbxassetid://5209162390"
+				ImageLabel.Size = UDim2.new(1, 4, 1, 4)
 				ImageLabel.Rotation = 45
 				wait(0.15)
 				ts:Create(ImageLabel,TweenInfo.new(0.15),{ImageColor3=Color3.fromRGB(25,25,25)}):Play()
@@ -357,6 +360,7 @@ function ApexUITable:Category(name, icon, iconcolor)
 				ts:Create(ToggleBtn,TweenInfo.new(0.3),{BackgroundColor3=Color3.fromRGB(50,50,50)}):Play()
 				ts:Create(ImageLabel,TweenInfo.new(0.15),{ImageColor3=Color3.fromRGB(45,45,45)}):Play()
 				ImageLabel.Image = "rbxassetid://6290039376"
+				ImageLabel.Size = UDim2.new(1, 0, 1, 0)
 				ImageLabel.Rotation = 0
 				wait(0.15)
 				ts:Create(ImageLabel,TweenInfo.new(0.15),{ImageColor3=Color3.fromRGB(25,25,25)}):Play()
