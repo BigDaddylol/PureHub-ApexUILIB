@@ -1,4 +1,4 @@
-print("Pure Hub Loaded! v2.4")
+print("Pure Hub Loaded! v2.5")
 local ApexUITable = {GameName = "NameHere",flags={},hidded=false,hidekey=toggleKey}
 local selectdcategory = ""
 local ts = game:GetService("TweenService")
@@ -240,8 +240,7 @@ function ApexUITable:Category(name, icon, iconcolor)
 	Category_icon.Size = UDim2.new(0, 25, 0, 25)
 	Category_icon.Image = icon
 	Category_icon.ImageColor3 = iconcolor
-	Category_icon.ScaleType = Enum.ScaleType.Slice
-	Category_icon.SliceScale = 0.050
+	Category_icon.ScaleType = Enum.ScaleType.Stretch
 	Category_icon.ZIndex = 3
 	local cat = {}
 	function cat:Toggle(name,default,callback)
