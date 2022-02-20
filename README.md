@@ -8,5 +8,7 @@ Some of the changes are as follows -
 * **Adding the keybind (complete!)**
 * **Adding gradient for aesthetics (complete)**
 * **Adding minimize button on top bar (complete)**
+* **Fixing the category icosn (complete)**
+* **Fixing major issue with sliders**
 
 These are the only main changes made by Ham#1591. Some minor ones may not be listed.
