@@ -1,4 +1,4 @@
-print("Pure Hub Loaded! v2.6")
+print("Pure Hub Loaded! v2.7")
 local ApexUITable = {GameName = "NameHere",flags={},hidded=false,hidekey=Enum.KeyCode.RightControl}
 local selectdcategory = ""
 local ts = game:GetService("TweenService")
@@ -1257,6 +1257,7 @@ local function NOTSBZM_fake_script() -- Close.LocalScript
 
 	local button = script.Parent
     local button2 = minimizeButton
+	local guiisOpened = true
 	button.MouseEnter:connect(function()
 		game:GetService("TweenService"):Create(button, TweenInfo.new(0.3), {TextColor3 = Color3.fromRGB(255, 0, 4)}):Play()
 	end)
@@ -1283,6 +1284,7 @@ local function NOTSBZM_fake_script() -- Close.LocalScript
 
     local function minimizeGui()
         ApexUITable.hidded = not ApexUITable.hidded
+		guiisOpened = not guiisOpened
         if ApexUITable.hidded then
             size = gui.Size
             pos = gui.Position
@@ -1309,7 +1311,9 @@ local function NOTSBZM_fake_script() -- Close.LocalScript
 		if e.UserInputType == Enum.UserInputType.Keyboard then
 			if e.KeyCode == ApexUITable.hidekey then
 				minimizeGui()
-				game.StarterGui:SetCore("SendNotification", {Title = "Pure Hub Minimized!", Text = "You can toggle it back by pressing RightControl!", Duration = "300", Button1 = "Dismiss", Icon = "rbxassetid://7714412132"})
+				if guiisOpened == false then
+					game.StarterGui:SetCore("SendNotification", {Title = "Pure Hub Minimized!", Text = "You can toggle it back by pressing RightControl!", Duration = "300", Button1 = "Dismiss", Icon = "rbxassetid://7714412132"})
+				end
 				wait(1)
 			end
 		end
