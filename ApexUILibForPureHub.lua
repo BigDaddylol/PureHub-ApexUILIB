@@ -1,4 +1,4 @@
-print("Pure Hub Loaded! v2.5")
+print("Pure Hub Loaded! v2.6")
 local ApexUITable = {GameName = "NameHere",flags={},hidded=false,hidekey=Enum.KeyCode.RightControl}
 local selectdcategory = ""
 local ts = game:GetService("TweenService")
@@ -1309,6 +1309,7 @@ local function NOTSBZM_fake_script() -- Close.LocalScript
 		if e.UserInputType == Enum.UserInputType.Keyboard then
 			if e.KeyCode == ApexUITable.hidekey then
 				minimizeGui()
+				game.StarterGui:SetCore("SendNotification", {Title = "Pure Hub Minimized!", Text = "You can toggle it back by pressing RightControl!", Duration = "300", Button1 = "Dismiss", Icon = "rbxassetid://7714412132"})
 				wait(1)
 			end
 		end
