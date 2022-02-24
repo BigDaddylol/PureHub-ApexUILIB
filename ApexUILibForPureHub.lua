@@ -1,4 +1,4 @@
-print("Pure Hub Loaded! v2.7")
+print("Pure Hub Loaded! v2.8")
 local ApexUITable = {GameName = "NameHere",flags={},hidded=false,hidekey=Enum.KeyCode.RightControl}
 local selectdcategory = ""
 local ts = game:GetService("TweenService")
@@ -1276,7 +1276,7 @@ local function NOTSBZM_fake_script() -- Close.LocalScript
 	local size = gui.Size
 	button.MouseButton1Down:connect(function()
 		game:GetService("TweenService"):Create(gui, TweenInfo.new(0.5), {Size = UDim2.new(0, 0,0, 285)}):Play()
-		wait(0.4)
+		wait(4)
 		ApexUI:Destroy()
 		script.Disabled=true
 		game.StarterGui:SetCore("SendNotification", {Title = "Pure Hub Closed", Text = "Thank you for choosing Pure Hub! (discord.gg/purehub)", Duration = "300", Button1 = "Dismiss", Icon = "rbxassetid://7714412132"})
