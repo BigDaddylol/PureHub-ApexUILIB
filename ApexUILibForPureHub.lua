@@ -1,6 +1,6 @@
-print("Pure Hub Loaded! v2.9")
+print("Pure Hub Loaded! v3.0")
 local ApexUITable = {GameName = "NameHere",flags={},hidded=false,hidekey=Enum.KeyCode.RightControl}
-local ApexUIFunctionTable = {}
+ApexUIFunctionTable = {}
 local selectdcategory = ""
 local ts = game:GetService("TweenService")
 local ApexUI = Instance.new("ScreenGui")
