@@ -1,4 +1,4 @@
-print("Pure Hub Loaded! v3.0")
+print("Pure Hub Loaded! v3.1")
 local ApexUITable = {GameName = "NameHere",flags={},hidded=false,hidekey=Enum.KeyCode.RightControl}
 ApexUIFunctionTable = {}
 local selectdcategory = ""
@@ -1311,21 +1311,19 @@ local function NOTSBZM_fake_script() -- Close.LocalScript
     end)
 
 	local uis = game:GetService("UserInputService")
-	local function minimizer(e,_)
+	uis.InputBegan:Connect(function(e,_)
 		if e.UserInputType == Enum.UserInputType.Keyboard then
 			if e.KeyCode == ApexUITable.hidekey then
 				minimizeGui()
-				if guiisOpened == false then
-					if script.Disabled ~= false then
+				if script.Disabled ~= true then
+					if guiisOpened == false then
 						game.StarterGui:SetCore("SendNotification", {Title = "Pure Hub Minimized!", Text = "You can toggle it back by pressing RightControl!", Duration = "300", Button1 = "Dismiss", Icon = "rbxassetid://7714412132"})
 					end
+					wait(1)
 				end
-				wait(1)
 			end
 		end
-	end
-
-	table.insert(ApexUIFunctionTable, uis.InputBegan:Connect(minimizer))
+	end)
 end
 coroutine.wrap(NOTSBZM_fake_script)()
 return ApexUITable;
