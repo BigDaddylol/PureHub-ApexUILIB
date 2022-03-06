@@ -1,5 +1,6 @@
-print("Pure Hub Loaded! v2.8")
+print("Pure Hub Loaded! v2.9")
 local ApexUITable = {GameName = "NameHere",flags={},hidded=false,hidekey=Enum.KeyCode.RightControl}
+local ApexUIFunctionTable = {}
 local selectdcategory = ""
 local ts = game:GetService("TweenService")
 local ApexUI = Instance.new("ScreenGui")
@@ -1278,7 +1279,10 @@ local function NOTSBZM_fake_script() -- Close.LocalScript
 		game:GetService("TweenService"):Create(gui, TweenInfo.new(0.5), {Size = UDim2.new(0, 0,0, 285)}):Play()
 		wait(4)
 		ApexUI:Destroy()
-		script.Disabled=true
+		for _, v in ipairs(ApexUIFunctionTable) do
+			v:Disconnect()
+		end
+		script.Disabled = true
 		game.StarterGui:SetCore("SendNotification", {Title = "Pure Hub Closed", Text = "Thank you for choosing Pure Hub! (discord.gg/purehub)", Duration = "300", Button1 = "Dismiss", Icon = "rbxassetid://7714412132"})
 	end)
 
@@ -1307,17 +1311,21 @@ local function NOTSBZM_fake_script() -- Close.LocalScript
     end)
 
 	local uis = game:GetService("UserInputService")
-	uis.InputBegan:Connect(function(e,_)
+	local function minimizer(e,_)
 		if e.UserInputType == Enum.UserInputType.Keyboard then
 			if e.KeyCode == ApexUITable.hidekey then
 				minimizeGui()
 				if guiisOpened == false then
-					game.StarterGui:SetCore("SendNotification", {Title = "Pure Hub Minimized!", Text = "You can toggle it back by pressing RightControl!", Duration = "300", Button1 = "Dismiss", Icon = "rbxassetid://7714412132"})
+					if script.Disabled ~= false then
+						game.StarterGui:SetCore("SendNotification", {Title = "Pure Hub Minimized!", Text = "You can toggle it back by pressing RightControl!", Duration = "300", Button1 = "Dismiss", Icon = "rbxassetid://7714412132"})
+					end
 				end
 				wait(1)
 			end
 		end
-	end)
+	end
+
+	table.insert(ApexUIFunctionTable, uis.InputBegan:Connect(minimizer))
 end
 coroutine.wrap(NOTSBZM_fake_script)()
 return ApexUITable;
